@@ -34,29 +34,29 @@
 }
 
 .boton-agregar {
-    background-color: #4caf50;
+    background-color: rgb(219, 147, 39);
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 10x;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .boton-agregar:hover {
-    background-color: #45a049;
+    background-color: rgb(219, 147, 39);
 }
 
 .boton-quitar {
-    background-color: #af4c4c;
+    background-color: #4c6fafe8;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 10x;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .boton-quitar:hover {
-    background-color: #a04545;
+    background-color: #4c6fafe8;
 }
 
 /* Estilos para el carrito */

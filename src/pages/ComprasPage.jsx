@@ -1,38 +1,42 @@
-import { useEffect, useState } from "react"
-import { Card } from "../components/Card"
-export const ComprasPage = () => {
+import { useContext, useEffect, useState } from "react"
+import { Card } from "../componentes/Card"
+import { ProductosContext } from "../context/ProductosContext"
+import { CarritoContext } from "../context/CarritoContext"
 
-    const [productos, setProductos] = useState([])
+    export const ComprasPage = () => {
 
-    const fetchProductos = async () => {
-        const response = await fetch('https://api.escuelajs.co/api/v1/products')
-        const data = await response.json()
-        console.log(data)
-        setProductos(data)
-    }
-
-    useEffect(() => {
-        fetchProductos()
-    }, [])
-
-    return (
+        const { productos } = useContext( ProductosContext )
+    
+        const { agregarCompra, eliminarCompra } = useContext(CarritoContext)
+    
+        const handleAgregar = (compra) =>{
+          agregarCompra(compra)
+        }
+        const handleQuitar = (id) =>{
+          eliminarCompra(id)
+        }
+       
+    
+      return (
         <>
-            <h1>Compras:</h1>
-            <hr />
-            {productos.map(producto => (
-                <Card
-                    
-                    imagen={producto.images}
-                    titulo={producto.title}
-                    descripcion={producto.description}
-                    precio={producto.price}
-                   
-                >
-
-                </Card>
-
-            ))}
-
+        <h1>Compras: </h1>
+        <hr />
+    
+        {productos.map(producto => (
+            <Card 
+            key={producto.id}
+            imagen={producto.image}
+            titulo={producto.title}
+            descripcion={producto.description}
+            precio={producto.price}
+            handleAgregar={() => handleAgregar(producto)}
+            handleQuitar={() => handleQuitar(producto.id)}
+            >
+    
+            </Card>
+        ))}
+        
         </>
-    )
-}
+      )
+    }
+    

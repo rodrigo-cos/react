@@ -1,6 +1,10 @@
 # React + Vite
+# Proyecto final de Argentina Programa react.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Integrantes del Grupo
+  1-Sergio Paulo Torres
+  2-Costilla Rodrigo
+
 
 Currently, two official plugins are available:
 

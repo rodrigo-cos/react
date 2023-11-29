@@ -1,11 +1,14 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { Navbar } from "./components/Navbar"
+import { Navbar } from "./componentes/Navbar"
 import { ComprasPage } from "./pages/ComprasPage"
 import { CarritoPage } from "./pages/CarritoPage"
+import { ProductosProvider } from "./context/ProductosProvider"
+import{CarritoProvider} from "./context/CarritoProvider"
 
 export const CarritoDeComprasApp = () => {
     return (
-        <>
+        <ProductosProvider>
+            <CarritoProvider>
             <Navbar></Navbar>
             <div className="container">
                 <Routes>
@@ -15,7 +18,7 @@ export const CarritoDeComprasApp = () => {
                 </Routes>
             </div>
 
-
-        </>
+            </CarritoProvider>
+        </ProductosProvider>
     )
 }
